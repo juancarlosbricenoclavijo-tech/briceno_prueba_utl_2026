@@ -1,1 +1,20 @@
-{}
+{
+  "meta": {
+    "nombre": "NOMBRE DEL CANDIDATO",
+    "email": "jcbricenoc@udistrital.edu.co",
+    "repositorio": "https://github.com/usuario/apellido_prueba_utl_2026"
+  },
+  "base_datos": {
+    "integridad": "ok",
+    "municipios_validos": "4/4",
+    "mesas": 1107,
+    "registros_mesa_eleccion": 2214,
+    "duplicados": 0,
+    "cobertura_completa": true
+  },
+  "sql": {
+    "3.1_arrastre_verde": {"estado": "OK"},
+    "3.2_dominancia_extrema": {"estado": "OK"},
+    "3.3_atribucion_deterministica": {"estado": "OK"}
+  }
+}

@@ -1,1 +1,620 @@
-{}
+{
+  "meta": {
+    "nombre": "Juan Carlos Briceño Clavijo",
+    "email": "jcbricenoc@udistrital.edu.co",
+    "repositorio": "https://github.com/juancarlosbricenoclavijo-tech/briceno_prueba_utl_2026"
+  },
+  "generado_utc": "2026-07-14T15:33:59.210748+00:00",
+  "base_datos": {
+    "ruta": "db/puestos_2026.db",
+    "integridad": "ok",
+    "municipios": [
+      {
+        "municipio": "DUITAMA",
+        "puestos": 22,
+        "mesas": 287,
+        "elecciones": 2,
+        "registros_mesa_eleccion": 574
+      },
+      {
+        "municipio": "PAIPA",
+        "puestos": 7,
+        "mesas": 95,
+        "elecciones": 2,
+        "registros_mesa_eleccion": 190
+      },
+      {
+        "municipio": "SOGAMOSO",
+        "puestos": 18,
+        "mesas": 301,
+        "elecciones": 2,
+        "registros_mesa_eleccion": 602
+      },
+      {
+        "municipio": "TUNJA",
+        "puestos": 26,
+        "mesas": 424,
+        "elecciones": 2,
+        "registros_mesa_eleccion": 848
+      }
+    ],
+    "municipios_validos": "4/4",
+    "mesas": 1107,
+    "registros_mesa_eleccion": 2214,
+    "duplicados": 0,
+    "cobertura_completa": true
+  },
+  "sql": {
+    "3.1_arrastre_verde": {
+      "estado": "OK",
+      "columnas": [
+        "municipio",
+        "puesto_codigo",
+        "puesto",
+        "votos_ca_verde",
+        "votos_se_verde",
+        "ratio_arrastre"
+      ],
+      "filas_muestra": [
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010005",
+          "puesto": "COL SANTO T DE AQUINO SD PRIA 2",
+          "votos_ca_verde": 227,
+          "votos_se_verde": 344,
+          "ratio_arrastre": 1.5154
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010004",
+          "puesto": "COL JESUS EUCARISTIA",
+          "votos_ca_verde": 243,
+          "votos_se_verde": 364,
+          "ratio_arrastre": 1.4979
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990010",
+          "puesto": "SURBA Y BONZA",
+          "votos_ca_verde": 220,
+          "votos_se_verde": 319,
+          "ratio_arrastre": 1.45
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020002",
+          "puesto": "COL GUILLERMO LEON VALENCIA",
+          "votos_ca_verde": 838,
+          "votos_se_verde": 1200,
+          "ratio_arrastre": 1.432
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990040",
+          "puesto": "EL CARMEN",
+          "votos_ca_verde": 5,
+          "votos_se_verde": 7,
+          "ratio_arrastre": 1.4
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020003",
+          "puesto": "U.P.T.C.",
+          "votos_ca_verde": 610,
+          "votos_se_verde": 834,
+          "ratio_arrastre": 1.3672
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010006",
+          "puesto": "COL LA NUEVA FAMILIA",
+          "votos_ca_verde": 366,
+          "votos_se_verde": 495,
+          "ratio_arrastre": 1.3525
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010001",
+          "puesto": "COLEGIO SALESIANO",
+          "votos_ca_verde": 364,
+          "votos_se_verde": 472,
+          "ratio_arrastre": 1.2967
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020006",
+          "puesto": "PARQUE LA ESPERANZA",
+          "votos_ca_verde": 323,
+          "votos_se_verde": 415,
+          "ratio_arrastre": 1.2848
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990050",
+          "puesto": "AVENDAÑOS",
+          "votos_ca_verde": 15,
+          "votos_se_verde": 19,
+          "ratio_arrastre": 1.2667
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079900001",
+          "puesto": "COLEGIO SEMINARIO",
+          "votos_ca_verde": 439,
+          "votos_se_verde": 554,
+          "ratio_arrastre": 1.262
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020005",
+          "puesto": "COLEGIO SIMON BOLIVAR",
+          "votos_ca_verde": 435,
+          "votos_se_verde": 543,
+          "ratio_arrastre": 1.2483
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990070",
+          "puesto": "SALON COMUNAL TOCOGUA",
+          "votos_ca_verde": 62,
+          "votos_se_verde": 77,
+          "ratio_arrastre": 1.2419
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010002",
+          "puesto": "ANTIGUO TERMINAL DE TRANSPORTE",
+          "votos_ca_verde": 439,
+          "votos_se_verde": 539,
+          "ratio_arrastre": 1.2278
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020001",
+          "puesto": "COLEGIO BOYACA",
+          "votos_ca_verde": 760,
+          "votos_se_verde": 924,
+          "ratio_arrastre": 1.2158
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010003",
+          "puesto": "COL SANTO T DE AQUINO SD PRIA 1",
+          "votos_ca_verde": 310,
+          "votos_se_verde": 371,
+          "ratio_arrastre": 1.1968
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990005",
+          "puesto": "SIRATA",
+          "votos_ca_verde": 39,
+          "votos_se_verde": 45,
+          "ratio_arrastre": 1.1538
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020004",
+          "puesto": "COL.FRANCISCO DE PAULA SANTAN",
+          "votos_ca_verde": 369,
+          "votos_se_verde": 416,
+          "ratio_arrastre": 1.1274
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990007",
+          "puesto": "SAN ANTONIO NORTE",
+          "votos_ca_verde": 220,
+          "votos_se_verde": 221,
+          "ratio_arrastre": 1.0045
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990020",
+          "puesto": "QUEBRADA DE BECERRA",
+          "votos_ca_verde": 52,
+          "votos_se_verde": 51,
+          "ratio_arrastre": 0.9808
+        }
+      ],
+      "muestra_limitada_a": 20
+    },
+    "3.2_dominancia_extrema": {
+      "estado": "OK",
+      "columnas": [
+        "municipio",
+        "puesto_codigo",
+        "puesto",
+        "mesa",
+        "eleccion",
+        "codpar",
+        "partido",
+        "codcan",
+        "candidato",
+        "votos_candidato",
+        "votos_partido",
+        "porcentaje_dominancia"
+      ],
+      "filas_muestra": [
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181010002",
+          "puesto": "I.E.EL ROSARIO SEDE CAMPESTRE",
+          "mesa": 7,
+          "eleccion": "SE",
+          "codpar": "9",
+          "partido": "PARTIDO 9",
+          "codcan": "8",
+          "candidato": "JOHN MOISES BESAILE FAYAD",
+          "votos_candidato": 100,
+          "votos_partido": 100,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181990001",
+          "puesto": "PALERMO",
+          "mesa": 3,
+          "eleccion": "SE",
+          "codpar": "3",
+          "partido": "PARTIDO 3",
+          "codcan": "6",
+          "candidato": "SOLEDAD TAMAYO TAMAYO",
+          "votos_candidato": 34,
+          "votos_partido": 34,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181990038",
+          "puesto": "PANTANO DE VARGAS",
+          "mesa": 1,
+          "eleccion": "SE",
+          "codpar": "43",
+          "partido": "PARTIDO 43",
+          "codcan": "4",
+          "candidato": "GLORIA ELSY DIAZ MARTINEZ",
+          "votos_candidato": 24,
+          "votos_partido": 24,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020004",
+          "puesto": "IE INSEANDES",
+          "mesa": 10,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 20,
+          "votos_partido": 20,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277010001",
+          "puesto": "IE INTEGRADO JOAQUIN GONZALEZ CAM",
+          "mesa": 16,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 16,
+          "votos_partido": 16,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020002",
+          "puesto": "IE MAGDALENA",
+          "mesa": 32,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 15,
+          "votos_partido": 15,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020001",
+          "puesto": "IE LIBERTADOR",
+          "mesa": 11,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 14,
+          "votos_partido": 14,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181020001",
+          "puesto": "COLISEO MUNICIPAL DE DEPORTES DE PAIPA",
+          "mesa": 7,
+          "eleccion": "CA",
+          "codpar": "10",
+          "partido": "CENTRO DEMOCRÁTICO",
+          "codcan": "102",
+          "candidato": "EDUAR ALEXIS TRIANA RINCON",
+          "votos_candidato": 12,
+          "votos_partido": 12,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277010001",
+          "puesto": "IE INTEGRADO JOAQUIN GONZALEZ CAM",
+          "mesa": 20,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 12,
+          "votos_partido": 12,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277010005",
+          "puesto": "COL NZADO GUSTAVO JIMENEZ",
+          "mesa": 11,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 11,
+          "votos_partido": 11,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277010005",
+          "puesto": "COL NZADO GUSTAVO JIMENEZ",
+          "mesa": 8,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 10,
+          "votos_partido": 10,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020006",
+          "puesto": "COL POLITÉCNICO",
+          "mesa": 14,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 10,
+          "votos_partido": 10,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020005",
+          "puesto": "IE SUGAMUXI",
+          "mesa": 28,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 10,
+          "votos_partido": 10,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020002",
+          "puesto": "COL GUILLERMO LEON VALENCIA",
+          "mesa": 11,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 9,
+          "votos_partido": 9,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020003",
+          "puesto": "U.P.T.C.",
+          "mesa": 1,
+          "eleccion": "CA",
+          "codpar": "120",
+          "partido": "PARTIDO 120",
+          "codcan": "105",
+          "candidato": "NANCY YANETH ZAPATA PACHON",
+          "votos_candidato": 9,
+          "votos_partido": 9,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010003",
+          "puesto": "COL SANTO T DE AQUINO SD PRIA 1",
+          "mesa": 3,
+          "eleccion": "CA",
+          "codpar": "120",
+          "partido": "PARTIDO 120",
+          "codcan": "105",
+          "candidato": "NANCY YANETH ZAPATA PACHON",
+          "votos_candidato": 8,
+          "votos_partido": 8,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020003",
+          "puesto": "U.P.T.C.",
+          "mesa": 3,
+          "eleccion": "CA",
+          "codpar": "120",
+          "partido": "PARTIDO 120",
+          "codcan": "101",
+          "candidato": "JAIRO ENRIQUE CASTIBLANCO PARRA",
+          "votos_candidato": 7,
+          "votos_partido": 7,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181990015",
+          "puesto": "EL VENADO",
+          "mesa": 1,
+          "eleccion": "CA",
+          "codpar": "2",
+          "partido": "PARTIDO CONSERVADOR COLOMBIANO",
+          "codcan": "106",
+          "candidato": "HECTOR DAVID CHAPARRO CHAPARRO",
+          "votos_candidato": 7,
+          "votos_partido": 7,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277010005",
+          "puesto": "COL NZADO GUSTAVO JIMENEZ",
+          "mesa": 12,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 7,
+          "votos_partido": 7,
+          "porcentaje_dominancia": 100.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020005",
+          "puesto": "IE SUGAMUXI",
+          "mesa": 26,
+          "eleccion": "SE",
+          "codpar": "17",
+          "partido": "PARTIDO 17",
+          "codcan": "3",
+          "candidato": "JUAN CAMILO OSTOS ROMERO",
+          "votos_candidato": 7,
+          "votos_partido": 7,
+          "porcentaje_dominancia": 100.0
+        }
+      ],
+      "muestra_limitada_a": 20
+    },
+    "3.3_atribucion_deterministica": {
+      "estado": "OK",
+      "columnas": [
+        "candidato",
+        "codpar_ca",
+        "partido",
+        "votos_ca_candidato",
+        "votos_ca_partido",
+        "votos_se_partido",
+        "atribucion_se_consolidada"
+      ],
+      "filas_muestra": [
+        {
+          "candidato": "YAMIT NOE HURTADO NEIRA",
+          "codpar_ca": "5",
+          "partido": "ALIANZA VERDE",
+          "votos_ca_candidato": 11206,
+          "votos_ca_partido": 37600,
+          "votos_se_partido": 37023,
+          "atribucion_se_consolidada": 9717.1
+        },
+        {
+          "candidato": "JAIME RAUL SALAMANCA TORRES",
+          "codpar_ca": "5",
+          "partido": "ALIANZA VERDE",
+          "votos_ca_candidato": 9406,
+          "votos_ca_partido": 37600,
+          "votos_se_partido": 37023,
+          "atribucion_se_consolidada": 9560.18
+        },
+        {
+          "candidato": "RAMIRO BARRAGAN ADAME",
+          "codpar_ca": "5",
+          "partido": "ALIANZA VERDE",
+          "votos_ca_candidato": 8936,
+          "votos_ca_partido": 37600,
+          "votos_se_partido": 37023,
+          "atribucion_se_consolidada": 9384.76
+        },
+        {
+          "candidato": "HECTOR DAVID CHAPARRO CHAPARRO",
+          "codpar_ca": "2",
+          "partido": "PARTIDO CONSERVADOR COLOMBIANO",
+          "votos_ca_candidato": 13861,
+          "votos_ca_partido": 24885,
+          "votos_se_partido": 15075,
+          "atribucion_se_consolidada": 7806.21
+        },
+        {
+          "candidato": "EDUAR ALEXIS TRIANA RINCON",
+          "codpar_ca": "10",
+          "partido": "CENTRO DEMOCRÁTICO",
+          "votos_ca_candidato": 4440,
+          "votos_ca_partido": 20494,
+          "votos_se_partido": 30771,
+          "atribucion_se_consolidada": 6656.22
+        }
+      ],
+      "muestra_limitada_a": 20
+    }
+  },
+  "procesos": {
+    "dashboard": {
+      "estado": "OK",
+      "salida": "[OK] Datos exportados: /workspaces/briceno_prueba_utl_2026/dashboard/data.json\n[OK] Dashboard autocontenido actualizado: /workspaces/briceno_prueba_utl_2026/dashboard/index.html\n[OK] Municipios: 4"
+    },
+    "heatmap": {
+      "estado": "OK",
+      "salida": "[OK] /workspaces/briceno_prueba_utl_2026/viz/heatmap_municipios.png | 171429 bytes"
+    },
+    "scatter": {
+      "estado": "OK",
+      "salida": "r=0.960 | pendiente=0.930 | n_mesas=1107"
+    }
+  },
+  "scatter_metricas": {
+    "r": 0.96,
+    "pendiente": 0.93,
+    "n_mesas": 1107
+  },
+  "archivos": {
+    "dashboard/index.html": {
+      "existe": true,
+      "bytes": 29925
+    },
+    "dashboard/data.json": {
+      "existe": true,
+      "bytes": 28691
+    },
+    "viz/heatmap_municipios.png": {
+      "existe": true,
+      "bytes": 171429
+    },
+    "viz/scatter_ca_se.png": {
+      "existe": true,
+      "bytes": 263488
+    }
+  }
+}

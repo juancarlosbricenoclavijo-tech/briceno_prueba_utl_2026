@@ -1,0 +1,39 @@
+{
+  "alert": {
+    "isActive": false,
+    "message": {
+      "es": "La página estará disponible a partir del <br/><span>8 de marzo <br/> a las 8:00 horas.</span>"
+    }
+  },
+  "appStoreLinks": {
+    "android": "",
+    "ios": ""
+  },
+  "grupo": 2,
+  "i18n": {
+    "version": 0
+  },
+  "id": "688144d2bbf439ba2cc4ba79",
+  "isOpen": true,
+  "minScrutinyDisplayPercentage": 0,
+  "numeroDeAvance": 0,
+  "numeroDeFase": 2,
+  "polling": {
+    "interval_MS": 60000,
+    "isActive": true
+  },
+  "showCargos": false,
+  "showCargosPorEleccion": [
+    {
+      "elec": 9,
+      "show": false
+    }
+  ],
+  "source": "act",
+  "version": 1,
+  "versionNomenclator": 1,
+  "versionPartidosColor": 0,
+  "waterMark": {
+    "es": ""
+  }
+}

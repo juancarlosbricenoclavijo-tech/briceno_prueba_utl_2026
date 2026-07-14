@@ -1,1 +1,988 @@
-{}
+{
+  "meta": {
+    "titulo": "Pipeline de Datos Electorales · Boyacá 2026",
+    "fuente": "Registraduría Nacional — resultados de preconteo 2026",
+    "municipios": [
+      "TUNJA",
+      "PAIPA",
+      "SOGAMOSO",
+      "DUITAMA"
+    ]
+  },
+  "comparativo": [
+    {
+      "municipio": "TUNJA",
+      "votos_ca": 72461
+    },
+    {
+      "municipio": "PAIPA",
+      "votos_ca": 16807
+    },
+    {
+      "municipio": "SOGAMOSO",
+      "votos_ca": 50881
+    },
+    {
+      "municipio": "DUITAMA",
+      "votos_ca": 48187
+    }
+  ],
+  "por_municipio": {
+    "TUNJA": {
+      "top_candidatos_ca": [
+        {
+          "municipio": "TUNJA",
+          "candidato": "RAMIRO BARRAGAN ADAME",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 4294,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "TUNJA",
+          "candidato": "JAIME RAUL SALAMANCA TORRES",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 3986,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "TUNJA",
+          "candidato": "YAMIT NOE HURTADO NEIRA",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 3933,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "TUNJA",
+          "candidato": "INGRID MARLEN SOGAMOSO ALFONSO",
+          "codpar": "121",
+          "partido": "PARTIDO 121",
+          "votos": 2903,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "TUNJA",
+          "candidato": "FABIAN CAMILO ROJAS BARRERA",
+          "codpar": "122",
+          "partido": "PARTIDO 122",
+          "votos": 2848,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "TUNJA",
+          "candidato": "WILDER IVAN SUESCA OCHOA",
+          "codpar": "121",
+          "partido": "PARTIDO 121",
+          "votos": 2756,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "TUNJA",
+          "candidato": "HECTOR DAVID CHAPARRO CHAPARRO",
+          "codpar": "2",
+          "partido": "PARTIDO CONSERVADOR COLOMBIANO",
+          "votos": 2341,
+          "color": "#E07B00"
+        },
+        {
+          "municipio": "TUNJA",
+          "candidato": "JOSE DARIO MAHECHA CASTILLO",
+          "codpar": "121",
+          "partido": "PARTIDO 121",
+          "votos": 2242,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "TUNJA",
+          "candidato": "OSCAR LEONARDO AVILA ROMERO",
+          "codpar": "2",
+          "partido": "PARTIDO CONSERVADOR COLOMBIANO",
+          "votos": 2180,
+          "color": "#E07B00"
+        },
+        {
+          "municipio": "TUNJA",
+          "candidato": "JAIRO ENRIQUE CASTIBLANCO PARRA",
+          "codpar": "120",
+          "partido": "PARTIDO 120",
+          "votos": 1911,
+          "color": "#64748B"
+        }
+      ],
+      "lider_senado": {
+        "municipio": "TUNJA",
+        "codpar": "92",
+        "partido": "PACTO HISTÓRICO",
+        "votos": 20651,
+        "color": "#7B2D8B"
+      },
+      "arrastre_verde": [
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001030003",
+          "puesto": "N. S. LEONOR ALVAREZ PINZON PRIMARIA",
+          "votos_ca_verde": 205,
+          "votos_se_verde": 243,
+          "ratio_arrastre": 1.1854
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020010",
+          "puesto": "IE NORMAL SUPERIOR SD JARDIN NACIONAL",
+          "votos_ca_verde": 275,
+          "votos_se_verde": 313,
+          "ratio_arrastre": 1.1382
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020007",
+          "puesto": "I.E GUSTAVO ROJAS PINILLA SD CENTRAL",
+          "votos_ca_verde": 671,
+          "votos_se_verde": 762,
+          "ratio_arrastre": 1.1356
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001030004",
+          "puesto": "COLISEO I.R.D.ET",
+          "votos_ca_verde": 821,
+          "votos_se_verde": 917,
+          "ratio_arrastre": 1.1169
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020004",
+          "puesto": "IE LIBERTADOR SIMON BOLIVAR SEDE CENTRAL",
+          "votos_ca_verde": 514,
+          "votos_se_verde": 573,
+          "ratio_arrastre": 1.1148
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020008",
+          "puesto": "IE LIBERTADOR SIMON BOLIVAR SN FRANCISCO",
+          "votos_ca_verde": 397,
+          "votos_se_verde": 434,
+          "ratio_arrastre": 1.0932
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001010005",
+          "puesto": "AUDITORIO GUSTAVO M CASTELLANOS COMFABOY",
+          "votos_ca_verde": 715,
+          "votos_se_verde": 778,
+          "ratio_arrastre": 1.0881
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001010003",
+          "puesto": "COL DE BOYACA SD JOSE IGNACIO DE MARQUEZ",
+          "votos_ca_verde": 493,
+          "votos_se_verde": 521,
+          "ratio_arrastre": 1.0568
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001030005",
+          "puesto": "I.E. ANTONIO JOSE SANDOVAL GOMEZ",
+          "votos_ca_verde": 327,
+          "votos_se_verde": 345,
+          "ratio_arrastre": 1.055
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001010006",
+          "puesto": "COLEGIO SALESIANO MALDONADO",
+          "votos_ca_verde": 1083,
+          "votos_se_verde": 1142,
+          "ratio_arrastre": 1.0545
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001010002",
+          "puesto": "I.T. GONZALO SUAREZ RENDON SEDE CENTRAL",
+          "votos_ca_verde": 591,
+          "votos_se_verde": 619,
+          "ratio_arrastre": 1.0474
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001030002",
+          "puesto": "COLISEO MUNICIPAL COMFABOY",
+          "votos_ca_verde": 921,
+          "votos_se_verde": 949,
+          "ratio_arrastre": 1.0304
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001030001",
+          "puesto": "COLISEO CUBIERTO MUNICIPAL",
+          "votos_ca_verde": 904,
+          "votos_se_verde": 914,
+          "ratio_arrastre": 1.0111
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020002",
+          "puesto": "C.A.S.D. BARRIO SAN ANTONIO",
+          "votos_ca_verde": 651,
+          "votos_se_verde": 656,
+          "ratio_arrastre": 1.0077
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001010001",
+          "puesto": "COL. BOYACA FCO DE PAULA SANTANDER",
+          "votos_ca_verde": 986,
+          "votos_se_verde": 990,
+          "ratio_arrastre": 1.0041
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001980001",
+          "puesto": "CARCEL",
+          "votos_ca_verde": 5,
+          "votos_se_verde": 5,
+          "ratio_arrastre": 1.0
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001900001",
+          "puesto": "PUESTO CENSO (COL. BOY SAN AGUSTIN)",
+          "votos_ca_verde": 911,
+          "votos_se_verde": 908,
+          "ratio_arrastre": 0.9967
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020001",
+          "puesto": "UNIVERSIDAD JUAN DE CASTELLANOS",
+          "votos_ca_verde": 1230,
+          "votos_se_verde": 1224,
+          "ratio_arrastre": 0.9951
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001030006",
+          "puesto": "COLISEO UNIBOYACA",
+          "votos_ca_verde": 901,
+          "votos_se_verde": 888,
+          "ratio_arrastre": 0.9856
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001010004",
+          "puesto": "IES JUAN CASTELLANOS SD CRISANTO LUQUE",
+          "votos_ca_verde": 953,
+          "votos_se_verde": 936,
+          "ratio_arrastre": 0.9822
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020003",
+          "puesto": "INEM CARLOS ARTURO TORRES SD CENTRAL",
+          "votos_ca_verde": 627,
+          "votos_se_verde": 612,
+          "ratio_arrastre": 0.9761
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020009",
+          "puesto": "I.E. SILVINO RODRIGUEZ SD MANZANARES",
+          "votos_ca_verde": 126,
+          "votos_se_verde": 122,
+          "ratio_arrastre": 0.9683
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020005",
+          "puesto": "UNIVERSIDAD SANTO TOMAS",
+          "votos_ca_verde": 903,
+          "votos_se_verde": 865,
+          "ratio_arrastre": 0.9579
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020006",
+          "puesto": "COLISEO SAN ANTONIO",
+          "votos_ca_verde": 564,
+          "votos_se_verde": 537,
+          "ratio_arrastre": 0.9521
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001020011",
+          "puesto": "CTRO DE REHAB. INTEG. DE BOYACA - CRIB",
+          "votos_ca_verde": 9,
+          "votos_se_verde": 8,
+          "ratio_arrastre": 0.8889
+        },
+        {
+          "municipio": "TUNJA",
+          "puesto_codigo": "0700001990021",
+          "puesto": "PUENTE DE BOYACA",
+          "votos_ca_verde": 53,
+          "votos_se_verde": 35,
+          "ratio_arrastre": 0.6604
+        }
+      ]
+    },
+    "PAIPA": {
+      "top_candidatos_ca": [
+        {
+          "municipio": "PAIPA",
+          "candidato": "YAMIT NOE HURTADO NEIRA",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 4756,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "PAIPA",
+          "candidato": "JAIME RAUL SALAMANCA TORRES",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 1465,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "PAIPA",
+          "candidato": "HECTOR DAVID CHAPARRO CHAPARRO",
+          "codpar": "2",
+          "partido": "PARTIDO CONSERVADOR COLOMBIANO",
+          "votos": 1393,
+          "color": "#E07B00"
+        },
+        {
+          "municipio": "PAIPA",
+          "candidato": "EDUAR ALEXIS TRIANA RINCON",
+          "codpar": "10",
+          "partido": "CENTRO DEMOCRÁTICO",
+          "votos": 869,
+          "color": "#1E477D"
+        },
+        {
+          "municipio": "PAIPA",
+          "candidato": "WILDER IVAN SUESCA OCHOA",
+          "codpar": "121",
+          "partido": "PARTIDO 121",
+          "votos": 729,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "PAIPA",
+          "candidato": "RAMIRO BARRAGAN ADAME",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 353,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "PAIPA",
+          "candidato": "OSCAR LEONARDO AVILA ROMERO",
+          "codpar": "2",
+          "partido": "PARTIDO CONSERVADOR COLOMBIANO",
+          "votos": 273,
+          "color": "#E07B00"
+        },
+        {
+          "municipio": "PAIPA",
+          "candidato": "NANCY YANETH ZAPATA PACHON",
+          "codpar": "120",
+          "partido": "PARTIDO 120",
+          "votos": 268,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "PAIPA",
+          "candidato": "INGRID MARLEN SOGAMOSO ALFONSO",
+          "codpar": "121",
+          "partido": "PARTIDO 121",
+          "votos": 195,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "PAIPA",
+          "candidato": "HERNEL DAVID ORTEGA GOMEZ",
+          "codpar": "121",
+          "partido": "PARTIDO 121",
+          "votos": 185,
+          "color": "#64748B"
+        }
+      ],
+      "lider_senado": {
+        "municipio": "PAIPA",
+        "codpar": "57",
+        "partido": "ALIANZA VERDE",
+        "votos": 4161,
+        "color": "#007C34"
+      },
+      "arrastre_verde": [
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181990038",
+          "puesto": "PANTANO DE VARGAS",
+          "votos_ca_verde": 246,
+          "votos_se_verde": 155,
+          "ratio_arrastre": 0.6301
+        },
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181010002",
+          "puesto": "I.E.EL ROSARIO SEDE CAMPESTRE",
+          "votos_ca_verde": 963,
+          "votos_se_verde": 602,
+          "ratio_arrastre": 0.6251
+        },
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181020002",
+          "puesto": "I.E. EL ROSARIO SEDE CENTRAL",
+          "votos_ca_verde": 1546,
+          "votos_se_verde": 930,
+          "ratio_arrastre": 0.6016
+        },
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181020001",
+          "puesto": "COLISEO MUNICIPAL DE DEPORTES DE PAIPA",
+          "votos_ca_verde": 2042,
+          "votos_se_verde": 1220,
+          "ratio_arrastre": 0.5975
+        },
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181010001",
+          "puesto": "I.E.TOMAS VASQUEZ RODRIGUEZ",
+          "votos_ca_verde": 2017,
+          "votos_se_verde": 1183,
+          "ratio_arrastre": 0.5865
+        },
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181990015",
+          "puesto": "EL VENADO",
+          "votos_ca_verde": 25,
+          "votos_se_verde": 9,
+          "ratio_arrastre": 0.36
+        },
+        {
+          "municipio": "PAIPA",
+          "puesto_codigo": "0700181990001",
+          "puesto": "PALERMO",
+          "votos_ca_verde": 332,
+          "votos_se_verde": 62,
+          "ratio_arrastre": 0.1867
+        }
+      ]
+    },
+    "SOGAMOSO": {
+      "top_candidatos_ca": [
+        {
+          "municipio": "SOGAMOSO",
+          "candidato": "HECTOR DAVID CHAPARRO CHAPARRO",
+          "codpar": "2",
+          "partido": "PARTIDO CONSERVADOR COLOMBIANO",
+          "votos": 5568,
+          "color": "#E07B00"
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "candidato": "RAMIRO BARRAGAN ADAME",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 2771,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "candidato": "DIANA PAOLA HERRERA NUÑEZ",
+          "codpar": "2",
+          "partido": "PARTIDO CONSERVADOR COLOMBIANO",
+          "votos": 1962,
+          "color": "#E07B00"
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "candidato": "JAIME RAUL SALAMANCA TORRES",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 1757,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "candidato": "NADIA ALEXANDRA CARREÑO AVELLA",
+          "codpar": "122",
+          "partido": "PARTIDO 122",
+          "votos": 1736,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "candidato": "FABIAN CAMILO ROJAS BARRERA",
+          "codpar": "122",
+          "partido": "PARTIDO 122",
+          "votos": 1380,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "candidato": "YURY NEILL DIAZ ARANGUREN",
+          "codpar": "120",
+          "partido": "PARTIDO 120",
+          "votos": 1342,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "candidato": "JAIRO ENRIQUE CASTIBLANCO PARRA",
+          "codpar": "120",
+          "partido": "PARTIDO 120",
+          "votos": 1319,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "candidato": "OSCAR LEONARDO AVILA ROMERO",
+          "codpar": "2",
+          "partido": "PARTIDO CONSERVADOR COLOMBIANO",
+          "votos": 1237,
+          "color": "#E07B00"
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "candidato": "YAMIT NOE HURTADO NEIRA",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 1201,
+          "color": "#007C34"
+        }
+      ],
+      "lider_senado": {
+        "municipio": "SOGAMOSO",
+        "codpar": "92",
+        "partido": "PACTO HISTÓRICO",
+        "votos": 13957,
+        "color": "#7B2D8B"
+      },
+      "arrastre_verde": [
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277990002",
+          "puesto": "LA PLAYITA",
+          "votos_ca_verde": 15,
+          "votos_se_verde": 35,
+          "ratio_arrastre": 2.3333
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277990003",
+          "puesto": "EL CRUCERO",
+          "votos_ca_verde": 12,
+          "votos_se_verde": 19,
+          "ratio_arrastre": 1.5833
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277990004",
+          "puesto": "LAS CINTAS",
+          "votos_ca_verde": 12,
+          "votos_se_verde": 14,
+          "ratio_arrastre": 1.1667
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277010005",
+          "puesto": "COL NZADO GUSTAVO JIMENEZ",
+          "votos_ca_verde": 276,
+          "votos_se_verde": 320,
+          "ratio_arrastre": 1.1594
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020001",
+          "puesto": "IE LIBERTADOR",
+          "votos_ca_verde": 752,
+          "votos_se_verde": 817,
+          "ratio_arrastre": 1.0864
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020006",
+          "puesto": "COL POLITÉCNICO",
+          "votos_ca_verde": 513,
+          "votos_se_verde": 553,
+          "ratio_arrastre": 1.078
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020003",
+          "puesto": "IEPAGS SEDE ROSARIO",
+          "votos_ca_verde": 722,
+          "votos_se_verde": 754,
+          "ratio_arrastre": 1.0443
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277010004",
+          "puesto": "IE FRANCISCO DE PAULA SANTANDER",
+          "votos_ca_verde": 684,
+          "votos_se_verde": 708,
+          "ratio_arrastre": 1.0351
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020002",
+          "puesto": "IE MAGDALENA",
+          "votos_ca_verde": 921,
+          "votos_se_verde": 953,
+          "ratio_arrastre": 1.0347
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020005",
+          "puesto": "IE SUGAMUXI",
+          "votos_ca_verde": 656,
+          "votos_se_verde": 675,
+          "ratio_arrastre": 1.029
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277010002",
+          "puesto": "COL REYES PATRIA",
+          "votos_ca_verde": 553,
+          "votos_se_verde": 560,
+          "ratio_arrastre": 1.0127
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277980001",
+          "puesto": "CÁRCEL DEL CIRCUITO",
+          "votos_ca_verde": 3,
+          "votos_se_verde": 3,
+          "ratio_arrastre": 1.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020004",
+          "puesto": "IE INSEANDES",
+          "votos_ca_verde": 642,
+          "votos_se_verde": 642,
+          "ratio_arrastre": 1.0
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277900001",
+          "puesto": "COLEGIO CELCO",
+          "votos_ca_verde": 485,
+          "votos_se_verde": 479,
+          "ratio_arrastre": 0.9876
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277990001",
+          "puesto": "MORCA",
+          "votos_ca_verde": 51,
+          "votos_se_verde": 49,
+          "ratio_arrastre": 0.9608
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277020007",
+          "puesto": "IE SILVESTRE ARENAS",
+          "votos_ca_verde": 165,
+          "votos_se_verde": 156,
+          "ratio_arrastre": 0.9455
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277010001",
+          "puesto": "IE INTEGRADO JOAQUIN GONZALEZ CAM",
+          "votos_ca_verde": 896,
+          "votos_se_verde": 835,
+          "ratio_arrastre": 0.9319
+        },
+        {
+          "municipio": "SOGAMOSO",
+          "puesto_codigo": "0700277010003",
+          "puesto": "UNIVERSIDAD DE BOYACA SEDE SOGAMOSO",
+          "votos_ca_verde": 728,
+          "votos_se_verde": 623,
+          "ratio_arrastre": 0.8558
+        }
+      ]
+    },
+    "DUITAMA": {
+      "top_candidatos_ca": [
+        {
+          "municipio": "DUITAMA",
+          "candidato": "HECTOR DAVID CHAPARRO CHAPARRO",
+          "codpar": "2",
+          "partido": "PARTIDO CONSERVADOR COLOMBIANO",
+          "votos": 4559,
+          "color": "#E07B00"
+        },
+        {
+          "municipio": "DUITAMA",
+          "candidato": "JAIME RAUL SALAMANCA TORRES",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 2198,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "DUITAMA",
+          "candidato": "HERNEL DAVID ORTEGA GOMEZ",
+          "codpar": "121",
+          "partido": "PARTIDO 121",
+          "votos": 1558,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "DUITAMA",
+          "candidato": "RAMIRO BARRAGAN ADAME",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 1518,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "DUITAMA",
+          "candidato": "YAMIT NOE HURTADO NEIRA",
+          "codpar": "5",
+          "partido": "ALIANZA VERDE",
+          "votos": 1316,
+          "color": "#007C34"
+        },
+        {
+          "municipio": "DUITAMA",
+          "candidato": "INGRID MARLEN SOGAMOSO ALFONSO",
+          "codpar": "121",
+          "partido": "PARTIDO 121",
+          "votos": 1148,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "DUITAMA",
+          "candidato": "NANCY YANETH ZAPATA PACHON",
+          "codpar": "120",
+          "partido": "PARTIDO 120",
+          "votos": 1136,
+          "color": "#64748B"
+        },
+        {
+          "municipio": "DUITAMA",
+          "candidato": "JICLY ESGARDO MUTIS ISAZA",
+          "codpar": "10",
+          "partido": "CENTRO DEMOCRÁTICO",
+          "votos": 1064,
+          "color": "#1E477D"
+        },
+        {
+          "municipio": "DUITAMA",
+          "candidato": "EDUAR ALEXIS TRIANA RINCON",
+          "codpar": "10",
+          "partido": "CENTRO DEMOCRÁTICO",
+          "votos": 924,
+          "color": "#1E477D"
+        },
+        {
+          "municipio": "DUITAMA",
+          "candidato": "JOSE DARIO MAHECHA CASTILLO",
+          "codpar": "121",
+          "partido": "PARTIDO 121",
+          "votos": 920,
+          "color": "#64748B"
+        }
+      ],
+      "lider_senado": {
+        "municipio": "DUITAMA",
+        "codpar": "92",
+        "partido": "PACTO HISTÓRICO",
+        "votos": 15423,
+        "color": "#7B2D8B"
+      },
+      "arrastre_verde": [
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010005",
+          "puesto": "COL SANTO T DE AQUINO SD PRIA 2",
+          "votos_ca_verde": 227,
+          "votos_se_verde": 344,
+          "ratio_arrastre": 1.5154
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010004",
+          "puesto": "COL JESUS EUCARISTIA",
+          "votos_ca_verde": 243,
+          "votos_se_verde": 364,
+          "ratio_arrastre": 1.4979
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990010",
+          "puesto": "SURBA Y BONZA",
+          "votos_ca_verde": 220,
+          "votos_se_verde": 319,
+          "ratio_arrastre": 1.45
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020002",
+          "puesto": "COL GUILLERMO LEON VALENCIA",
+          "votos_ca_verde": 838,
+          "votos_se_verde": 1200,
+          "ratio_arrastre": 1.432
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990040",
+          "puesto": "EL CARMEN",
+          "votos_ca_verde": 5,
+          "votos_se_verde": 7,
+          "ratio_arrastre": 1.4
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020003",
+          "puesto": "U.P.T.C.",
+          "votos_ca_verde": 610,
+          "votos_se_verde": 834,
+          "ratio_arrastre": 1.3672
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010006",
+          "puesto": "COL LA NUEVA FAMILIA",
+          "votos_ca_verde": 366,
+          "votos_se_verde": 495,
+          "ratio_arrastre": 1.3525
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010001",
+          "puesto": "COLEGIO SALESIANO",
+          "votos_ca_verde": 364,
+          "votos_se_verde": 472,
+          "ratio_arrastre": 1.2967
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020006",
+          "puesto": "PARQUE LA ESPERANZA",
+          "votos_ca_verde": 323,
+          "votos_se_verde": 415,
+          "ratio_arrastre": 1.2848
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990050",
+          "puesto": "AVENDAÑOS",
+          "votos_ca_verde": 15,
+          "votos_se_verde": 19,
+          "ratio_arrastre": 1.2667
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079900001",
+          "puesto": "COLEGIO SEMINARIO",
+          "votos_ca_verde": 439,
+          "votos_se_verde": 554,
+          "ratio_arrastre": 1.262
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020005",
+          "puesto": "COLEGIO SIMON BOLIVAR",
+          "votos_ca_verde": 435,
+          "votos_se_verde": 543,
+          "ratio_arrastre": 1.2483
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990070",
+          "puesto": "SALON COMUNAL TOCOGUA",
+          "votos_ca_verde": 62,
+          "votos_se_verde": 77,
+          "ratio_arrastre": 1.2419
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010002",
+          "puesto": "ANTIGUO TERMINAL DE TRANSPORTE",
+          "votos_ca_verde": 439,
+          "votos_se_verde": 539,
+          "ratio_arrastre": 1.2278
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020001",
+          "puesto": "COLEGIO BOYACA",
+          "votos_ca_verde": 760,
+          "votos_se_verde": 924,
+          "ratio_arrastre": 1.2158
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079010003",
+          "puesto": "COL SANTO T DE AQUINO SD PRIA 1",
+          "votos_ca_verde": 310,
+          "votos_se_verde": 371,
+          "ratio_arrastre": 1.1968
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990005",
+          "puesto": "SIRATA",
+          "votos_ca_verde": 39,
+          "votos_se_verde": 45,
+          "ratio_arrastre": 1.1538
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020004",
+          "puesto": "COL.FRANCISCO DE PAULA SANTAN",
+          "votos_ca_verde": 369,
+          "votos_se_verde": 416,
+          "ratio_arrastre": 1.1274
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990007",
+          "puesto": "SAN ANTONIO NORTE",
+          "votos_ca_verde": 220,
+          "votos_se_verde": 221,
+          "ratio_arrastre": 1.0045
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079990020",
+          "puesto": "QUEBRADA DE BECERRA",
+          "votos_ca_verde": 52,
+          "votos_se_verde": 51,
+          "ratio_arrastre": 0.9808
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079020007",
+          "puesto": "COLEGIO JAIRO ANIBAL NIÑO",
+          "votos_ca_verde": 165,
+          "votos_se_verde": 159,
+          "ratio_arrastre": 0.9636
+        },
+        {
+          "municipio": "DUITAMA",
+          "puesto_codigo": "0700079980001",
+          "puesto": "CARCEL",
+          "votos_ca_verde": 6,
+          "votos_se_verde": 2,
+          "ratio_arrastre": 0.3333
+        }
+      ]
+    }
+  }
+}

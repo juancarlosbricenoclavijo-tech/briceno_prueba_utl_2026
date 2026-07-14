@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Electoral Boyacá 2026</title>
+  <style>
+    :root {
+      --fondo: #f3f6fb;
+      --panel: #ffffff;
+      --texto: #132238;
+      --muted: #607087;
+      --borde: #d9e1ec;
+      --primario: #173f73;
+      --primario-2: #2362a5;
+      --sombra: 0 10px 30px rgba(20, 49, 85, .10);
+      --verde: #007C34;
+      --pacto: #7B2D8B;
+      --centro: #1E477D;
+      --conservador: #E07B00;
+    }
+    [data-theme="dark"] {
+      --fondo: #0b1220;
+      --panel: #111c2e;
+      --texto: #edf3fb;
+      --muted: #a8b6ca;
+      --borde: #28364a;
+      --primario: #70a9e8;
+      --primario-2: #8dc2ff;
+      --sombra: 0 12px 30px rgba(0, 0, 0, .30);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      transition: background .2s ease, color .2s ease;
+    }
+    header {
+      background: linear-gradient(125deg, #102f59, #215d9b);
+      color: white;
+      padding: 24px clamp(18px, 5vw, 64px);
+    }
+    header h1 { margin: 0 0 5px; font-size: clamp(1.45rem, 3vw, 2.35rem); }
+    header p { margin: 0; opacity: .88; }
+    .barra {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    button, select {
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font: inherit;
+    }
+    header button, header select { background: rgba(255,255,255,.12); color: white; }
+    header select option { color: #132238; }
+    button { cursor: pointer; }
+    main {
+      width: min(1180px, calc(100% - 28px));
+      margin: 24px auto 48px;
+    }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      box-shadow: var(--sombra);
+      padding: 20px;
+    }
+    .comparativo { grid-column: span 7; }
+    .lider { grid-column: span 5; }
+    .candidatos { grid-column: span 7; }
+    .arrastre { grid-column: span 12; }
+    h2 { margin: 0 0 6px; font-size: 1.18rem; }
+    .subtitulo { margin: 0 0 18px; color: var(--muted); font-size: .92rem; }
+    .barra-item { margin: 13px 0; }
+    .barra-cabecera { display: flex; justify-content: space-between; gap: 14px; font-size: .91rem; }
+    .pista { height: 12px; margin-top: 6px; background: var(--borde); border-radius: 999px; overflow: hidden; }
+    .relleno { height: 100%; border-radius: 999px; background: var(--primario-2); min-width: 2px; }
+    .candidato-linea { display: grid; grid-template-columns: minmax(150px, 1fr) 2fr 75px; gap: 10px; align-items: center; margin: 10px 0; }
+    .candidato-nombre { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-size: .88rem; }
+    .mini-pista { height: 10px; background: var(--borde); border-radius: 999px; overflow: hidden; }
+    .mini-relleno { height: 100%; border-radius: 999px; }
+    .valor { text-align: right; font-variant-numeric: tabular-nums; font-size: .88rem; }
+    .lider-tarjeta { display: flex; flex-direction: column; min-height: 210px; justify-content: center; align-items: center; text-align: center; }
+    .lider-punto { width: 18px; height: 18px; border-radius: 50%; margin-bottom: 12px; }
+    .lider-partido { font-size: 1.35rem; font-weight: 750; }
+    .lider-votos { font-size: 2.1rem; font-weight: 800; margin-top: 10px; }
+    .muted { color: var(--muted); }
+    #graficoArrastre { width: 100%; min-height: 330px; display: block; }
+    .tabla-wrap { overflow-x: auto; margin-top: 14px; max-height: 280px; }
+    table { width: 100%; border-collapse: collapse; font-size: .87rem; }
+    th, td { padding: 8px 9px; border-bottom: 1px solid var(--borde); text-align: left; }
+    th { position: sticky; top: 0; background: var(--panel); }
+    .leyenda { display: flex; flex-wrap: wrap; gap: 10px 16px; margin-top: 12px; color: var(--muted); font-size: .82rem; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; }
+    .chip i { display: inline-block; width: 11px; height: 11px; border-radius: 50%; }
+    footer { text-align: center; color: var(--muted); padding: 22px; font-size: .83rem; }
+    @media (max-width: 820px) {
+      .comparativo, .lider, .candidatos, .arrastre { grid-column: span 12; }
+      .candidato-linea { grid-template-columns: minmax(110px, 1fr) 1.4fr 65px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Dashboard Electoral · Boyacá 2026</h1>
+  <p>Comparativo de Cámara, liderazgo de Senado y arrastre electoral de Alianza Verde.</p>
+  <div class="barra">
+    <label for="municipio">Municipio:</label>
+    <select id="municipio"></select>
+    <button id="tema" type="button">Cambiar modo</button>
+    <button id="exportar" type="button">Exportar CSV</button>
+  </div>
+</header>
+
+<main>
+  <div class="grid">
+    <section class="panel comparativo">
+      <h2>Votos totales de Cámara</h2>
+      <p class="subtitulo">Comparación de los cuatro municipios analizados.</p>
+      <div id="comparativo"></div>
+    </section>
+
+    <section class="panel lider">
+      <h2>Partido líder en Senado</h2>
+      <p class="subtitulo" id="liderMunicipio"></p>
+      <div id="lider" class="lider-tarjeta"></div>
+    </section>
+
+    <section class="panel candidatos">
+      <h2>Top 10 candidaturas de Cámara</h2>
+      <p class="subtitulo" id="candidatosMunicipio"></p>
+      <div id="candidatos"></div>
+      <div class="leyenda">
+        <span class="chip"><i style="background:#007C34"></i>Alianza Verde</span>
+        <span class="chip"><i style="background:#7B2D8B"></i>Pacto Histórico</span>
+        <span class="chip"><i style="background:#1E477D"></i>Centro Democrático</span>
+        <span class="chip"><i style="background:#E07B00"></i>Conservador</span>
+      </div>
+    </section>
+
+    <section class="panel arrastre">
+      <h2>Arrastre Alianza Verde CA → SE por puesto</h2>
+      <p class="subtitulo">Ratio = votos Senado Verde / votos Cámara Verde. La línea punteada marca 1,0.</p>
+      <svg id="graficoArrastre" viewBox="0 0 1000 360" role="img" aria-label="Gráfico de arrastre electoral"></svg>
+      <div class="tabla-wrap">
+        <table>
+          <thead><tr><th>Puesto</th><th>CA Verde</th><th>SE Verde</th><th>Ratio</th></tr></thead>
+          <tbody id="tablaArrastre"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>Fuente: Registraduría Nacional del Estado Civil · Preconteo Congreso 2026.</footer>
+
+<script>
+const DATA = /*__DATA_START__*/{"meta":{"titulo":"Pipeline de Datos Electorales · Boyacá 2026","fuente":"Registraduría Nacional — resultados de preconteo 2026","municipios":["TUNJA","PAIPA","SOGAMOSO","DUITAMA"]},"comparativo":[{"municipio":"TUNJA","votos_ca":72461},{"municipio":"PAIPA","votos_ca":16807},{"municipio":"SOGAMOSO","votos_ca":50881},{"municipio":"DUITAMA","votos_ca":48187}],"por_municipio":{"TUNJA":{"top_candidatos_ca":[{"municipio":"TUNJA","candidato":"RAMIRO BARRAGAN ADAME","codpar":"5","partido":"ALIANZA VERDE","votos":4294,"color":"#007C34"},{"municipio":"TUNJA","candidato":"JAIME RAUL SALAMANCA TORRES","codpar":"5","partido":"ALIANZA VERDE","votos":3986,"color":"#007C34"},{"municipio":"TUNJA","candidato":"YAMIT NOE HURTADO NEIRA","codpar":"5","partido":"ALIANZA VERDE","votos":3933,"color":"#007C34"},{"municipio":"TUNJA","candidato":"INGRID MARLEN SOGAMOSO ALFONSO","codpar":"121","partido":"PARTIDO 121","votos":2903,"color":"#64748B"},{"municipio":"TUNJA","candidato":"FABIAN CAMILO ROJAS BARRERA","codpar":"122","partido":"PARTIDO 122","votos":2848,"color":"#64748B"},{"municipio":"TUNJA","candidato":"WILDER IVAN SUESCA OCHOA","codpar":"121","partido":"PARTIDO 121","votos":2756,"color":"#64748B"},{"municipio":"TUNJA","candidato":"HECTOR DAVID CHAPARRO CHAPARRO","codpar":"2","partido":"PARTIDO CONSERVADOR COLOMBIANO","votos":2341,"color":"#E07B00"},{"municipio":"TUNJA","candidato":"JOSE DARIO MAHECHA CASTILLO","codpar":"121","partido":"PARTIDO 121","votos":2242,"color":"#64748B"},{"municipio":"TUNJA","candidato":"OSCAR LEONARDO AVILA ROMERO","codpar":"2","partido":"PARTIDO CONSERVADOR COLOMBIANO","votos":2180,"color":"#E07B00"},{"municipio":"TUNJA","candidato":"JAIRO ENRIQUE CASTIBLANCO PARRA","codpar":"120","partido":"PARTIDO 120","votos":1911,"color":"#64748B"}],"lider_senado":{"municipio":"TUNJA","codpar":"92","partido":"PACTO HISTÓRICO","votos":20651,"color":"#7B2D8B"},"arrastre_verde":[{"municipio":"TUNJA","puesto_codigo":"0700001030003","puesto":"N. S. LEONOR ALVAREZ PINZON PRIMARIA","votos_ca_verde":205,"votos_se_verde":243,"ratio_arrastre":1.1854},{"municipio":"TUNJA","puesto_codigo":"0700001020010","puesto":"IE NORMAL SUPERIOR SD JARDIN NACIONAL","votos_ca_verde":275,"votos_se_verde":313,"ratio_arrastre":1.1382},{"municipio":"TUNJA","puesto_codigo":"0700001020007","puesto":"I.E GUSTAVO ROJAS PINILLA SD CENTRAL","votos_ca_verde":671,"votos_se_verde":762,"ratio_arrastre":1.1356},{"municipio":"TUNJA","puesto_codigo":"0700001030004","puesto":"COLISEO I.R.D.ET","votos_ca_verde":821,"votos_se_verde":917,"ratio_arrastre":1.1169},{"municipio":"TUNJA","puesto_codigo":"0700001020004","puesto":"IE LIBERTADOR SIMON BOLIVAR SEDE CENTRAL","votos_ca_verde":514,"votos_se_verde":573,"ratio_arrastre":1.1148},{"municipio":"TUNJA","puesto_codigo":"0700001020008","puesto":"IE LIBERTADOR SIMON BOLIVAR SN FRANCISCO","votos_ca_verde":397,"votos_se_verde":434,"ratio_arrastre":1.0932},{"municipio":"TUNJA","puesto_codigo":"0700001010005","puesto":"AUDITORIO GUSTAVO M CASTELLANOS COMFABOY","votos_ca_verde":715,"votos_se_verde":778,"ratio_arrastre":1.0881},{"municipio":"TUNJA","puesto_codigo":"0700001010003","puesto":"COL DE BOYACA SD JOSE IGNACIO DE MARQUEZ","votos_ca_verde":493,"votos_se_verde":521,"ratio_arrastre":1.0568},{"municipio":"TUNJA","puesto_codigo":"0700001030005","puesto":"I.E. ANTONIO JOSE SANDOVAL GOMEZ","votos_ca_verde":327,"votos_se_verde":345,"ratio_arrastre":1.055},{"municipio":"TUNJA","puesto_codigo":"0700001010006","puesto":"COLEGIO SALESIANO MALDONADO","votos_ca_verde":1083,"votos_se_verde":1142,"ratio_arrastre":1.0545},{"municipio":"TUNJA","puesto_codigo":"0700001010002","puesto":"I.T. GONZALO SUAREZ RENDON SEDE CENTRAL","votos_ca_verde":591,"votos_se_verde":619,"ratio_arrastre":1.0474},{"municipio":"TUNJA","puesto_codigo":"0700001030002","puesto":"COLISEO MUNICIPAL COMFABOY","votos_ca_verde":921,"votos_se_verde":949,"ratio_arrastre":1.0304},{"municipio":"TUNJA","puesto_codigo":"0700001030001","puesto":"COLISEO CUBIERTO MUNICIPAL","votos_ca_verde":904,"votos_se_verde":914,"ratio_arrastre":1.0111},{"municipio":"TUNJA","puesto_codigo":"0700001020002","puesto":"C.A.S.D. BARRIO SAN ANTONIO","votos_ca_verde":651,"votos_se_verde":656,"ratio_arrastre":1.0077},{"municipio":"TUNJA","puesto_codigo":"0700001010001","puesto":"COL. BOYACA FCO DE PAULA SANTANDER","votos_ca_verde":986,"votos_se_verde":990,"ratio_arrastre":1.0041},{"municipio":"TUNJA","puesto_codigo":"0700001980001","puesto":"CARCEL","votos_ca_verde":5,"votos_se_verde":5,"ratio_arrastre":1.0},{"municipio":"TUNJA","puesto_codigo":"0700001900001","puesto":"PUESTO CENSO (COL. BOY SAN AGUSTIN)","votos_ca_verde":911,"votos_se_verde":908,"ratio_arrastre":0.9967},{"municipio":"TUNJA","puesto_codigo":"0700001020001","puesto":"UNIVERSIDAD JUAN DE CASTELLANOS","votos_ca_verde":1230,"votos_se_verde":1224,"ratio_arrastre":0.9951},{"municipio":"TUNJA","puesto_codigo":"0700001030006","puesto":"COLISEO UNIBOYACA","votos_ca_verde":901,"votos_se_verde":888,"ratio_arrastre":0.9856},{"municipio":"TUNJA","puesto_codigo":"0700001010004","puesto":"IES JUAN CASTELLANOS SD CRISANTO LUQUE","votos_ca_verde":953,"votos_se_verde":936,"ratio_arrastre":0.9822},{"municipio":"TUNJA","puesto_codigo":"0700001020003","puesto":"INEM CARLOS ARTURO TORRES SD CENTRAL","votos_ca_verde":627,"votos_se_verde":612,"ratio_arrastre":0.9761},{"municipio":"TUNJA","puesto_codigo":"0700001020009","puesto":"I.E. SILVINO RODRIGUEZ SD MANZANARES","votos_ca_verde":126,"votos_se_verde":122,"ratio_arrastre":0.9683},{"municipio":"TUNJA","puesto_codigo":"0700001020005","puesto":"UNIVERSIDAD SANTO TOMAS","votos_ca_verde":903,"votos_se_verde":865,"ratio_arrastre":0.9579},{"municipio":"TUNJA","puesto_codigo":"0700001020006","puesto":"COLISEO SAN ANTONIO","votos_ca_verde":564,"votos_se_verde":537,"ratio_arrastre":0.9521},{"municipio":"TUNJA","puesto_codigo":"0700001020011","puesto":"CTRO DE REHAB. INTEG. DE BOYACA - CRIB","votos_ca_verde":9,"votos_se_verde":8,"ratio_arrastre":0.8889},{"municipio":"TUNJA","puesto_codigo":"0700001990021","puesto":"PUENTE DE BOYACA","votos_ca_verde":53,"votos_se_verde":35,"ratio_arrastre":0.6604}]},"PAIPA":{"top_candidatos_ca":[{"municipio":"PAIPA","candidato":"YAMIT NOE HURTADO NEIRA","codpar":"5","partido":"ALIANZA VERDE","votos":4756,"color":"#007C34"},{"municipio":"PAIPA","candidato":"JAIME RAUL SALAMANCA TORRES","codpar":"5","partido":"ALIANZA VERDE","votos":1465,"color":"#007C34"},{"municipio":"PAIPA","candidato":"HECTOR DAVID CHAPARRO CHAPARRO","codpar":"2","partido":"PARTIDO CONSERVADOR COLOMBIANO","votos":1393,"color":"#E07B00"},{"municipio":"PAIPA","candidato":"EDUAR ALEXIS TRIANA RINCON","codpar":"10","partido":"CENTRO DEMOCRÁTICO","votos":869,"color":"#1E477D"},{"municipio":"PAIPA","candidato":"WILDER IVAN SUESCA OCHOA","codpar":"121","partido":"PARTIDO 121","votos":729,"color":"#64748B"},{"municipio":"PAIPA","candidato":"RAMIRO BARRAGAN ADAME","codpar":"5","partido":"ALIANZA VERDE","votos":353,"color":"#007C34"},{"municipio":"PAIPA","candidato":"OSCAR LEONARDO AVILA ROMERO","codpar":"2","partido":"PARTIDO CONSERVADOR COLOMBIANO","votos":273,"color":"#E07B00"},{"municipio":"PAIPA","candidato":"NANCY YANETH ZAPATA PACHON","codpar":"120","partido":"PARTIDO 120","votos":268,"color":"#64748B"},{"municipio":"PAIPA","candidato":"INGRID MARLEN SOGAMOSO ALFONSO","codpar":"121","partido":"PARTIDO 121","votos":195,"color":"#64748B"},{"municipio":"PAIPA","candidato":"HERNEL DAVID ORTEGA GOMEZ","codpar":"121","partido":"PARTIDO 121","votos":185,"color":"#64748B"}],"lider_senado":{"municipio":"PAIPA","codpar":"57","partido":"ALIANZA VERDE","votos":4161,"color":"#007C34"},"arrastre_verde":[{"municipio":"PAIPA","puesto_codigo":"0700181990038","puesto":"PANTANO DE VARGAS","votos_ca_verde":246,"votos_se_verde":155,"ratio_arrastre":0.6301},{"municipio":"PAIPA","puesto_codigo":"0700181010002","puesto":"I.E.EL ROSARIO SEDE CAMPESTRE","votos_ca_verde":963,"votos_se_verde":602,"ratio_arrastre":0.6251},{"municipio":"PAIPA","puesto_codigo":"0700181020002","puesto":"I.E. EL ROSARIO SEDE CENTRAL","votos_ca_verde":1546,"votos_se_verde":930,"ratio_arrastre":0.6016},{"municipio":"PAIPA","puesto_codigo":"0700181020001","puesto":"COLISEO MUNICIPAL DE DEPORTES DE PAIPA","votos_ca_verde":2042,"votos_se_verde":1220,"ratio_arrastre":0.5975},{"municipio":"PAIPA","puesto_codigo":"0700181010001","puesto":"I.E.TOMAS VASQUEZ RODRIGUEZ","votos_ca_verde":2017,"votos_se_verde":1183,"ratio_arrastre":0.5865},{"municipio":"PAIPA","puesto_codigo":"0700181990015","puesto":"EL VENADO","votos_ca_verde":25,"votos_se_verde":9,"ratio_arrastre":0.36},{"municipio":"PAIPA","puesto_codigo":"0700181990001","puesto":"PALERMO","votos_ca_verde":332,"votos_se_verde":62,"ratio_arrastre":0.1867}]},"SOGAMOSO":{"top_candidatos_ca":[{"municipio":"SOGAMOSO","candidato":"HECTOR DAVID CHAPARRO CHAPARRO","codpar":"2","partido":"PARTIDO CONSERVADOR COLOMBIANO","votos":5568,"color":"#E07B00"},{"municipio":"SOGAMOSO","candidato":"RAMIRO BARRAGAN ADAME","codpar":"5","partido":"ALIANZA VERDE","votos":2771,"color":"#007C34"},{"municipio":"SOGAMOSO","candidato":"DIANA PAOLA HERRERA NUÑEZ","codpar":"2","partido":"PARTIDO CONSERVADOR COLOMBIANO","votos":1962,"color":"#E07B00"},{"municipio":"SOGAMOSO","candidato":"JAIME RAUL SALAMANCA TORRES","codpar":"5","partido":"ALIANZA VERDE","votos":1757,"color":"#007C34"},{"municipio":"SOGAMOSO","candidato":"NADIA ALEXANDRA CARREÑO AVELLA","codpar":"122","partido":"PARTIDO 122","votos":1736,"color":"#64748B"},{"municipio":"SOGAMOSO","candidato":"FABIAN CAMILO ROJAS BARRERA","codpar":"122","partido":"PARTIDO 122","votos":1380,"color":"#64748B"},{"municipio":"SOGAMOSO","candidato":"YURY NEILL DIAZ ARANGUREN","codpar":"120","partido":"PARTIDO 120","votos":1342,"color":"#64748B"},{"municipio":"SOGAMOSO","candidato":"JAIRO ENRIQUE CASTIBLANCO PARRA","codpar":"120","partido":"PARTIDO 120","votos":1319,"color":"#64748B"},{"municipio":"SOGAMOSO","candidato":"OSCAR LEONARDO AVILA ROMERO","codpar":"2","partido":"PARTIDO CONSERVADOR COLOMBIANO","votos":1237,"color":"#E07B00"},{"municipio":"SOGAMOSO","candidato":"YAMIT NOE HURTADO NEIRA","codpar":"5","partido":"ALIANZA VERDE","votos":1201,"color":"#007C34"}],"lider_senado":{"municipio":"SOGAMOSO","codpar":"92","partido":"PACTO HISTÓRICO","votos":13957,"color":"#7B2D8B"},"arrastre_verde":[{"municipio":"SOGAMOSO","puesto_codigo":"0700277990002","puesto":"LA PLAYITA","votos_ca_verde":15,"votos_se_verde":35,"ratio_arrastre":2.3333},{"municipio":"SOGAMOSO","puesto_codigo":"0700277990003","puesto":"EL CRUCERO","votos_ca_verde":12,"votos_se_verde":19,"ratio_arrastre":1.5833},{"municipio":"SOGAMOSO","puesto_codigo":"0700277990004","puesto":"LAS CINTAS","votos_ca_verde":12,"votos_se_verde":14,"ratio_arrastre":1.1667},{"municipio":"SOGAMOSO","puesto_codigo":"0700277010005","puesto":"COL NZADO GUSTAVO JIMENEZ","votos_ca_verde":276,"votos_se_verde":320,"ratio_arrastre":1.1594},{"municipio":"SOGAMOSO","puesto_codigo":"0700277020001","puesto":"IE LIBERTADOR","votos_ca_verde":752,"votos_se_verde":817,"ratio_arrastre":1.0864},{"municipio":"SOGAMOSO","puesto_codigo":"0700277020006","puesto":"COL POLITÉCNICO","votos_ca_verde":513,"votos_se_verde":553,"ratio_arrastre":1.078},{"municipio":"SOGAMOSO","puesto_codigo":"0700277020003","puesto":"IEPAGS SEDE ROSARIO","votos_ca_verde":722,"votos_se_verde":754,"ratio_arrastre":1.0443},{"municipio":"SOGAMOSO","puesto_codigo":"0700277010004","puesto":"IE FRANCISCO DE PAULA SANTANDER","votos_ca_verde":684,"votos_se_verde":708,"ratio_arrastre":1.0351},{"municipio":"SOGAMOSO","puesto_codigo":"0700277020002","puesto":"IE MAGDALENA","votos_ca_verde":921,"votos_se_verde":953,"ratio_arrastre":1.0347},{"municipio":"SOGAMOSO","puesto_codigo":"0700277020005","puesto":"IE SUGAMUXI","votos_ca_verde":656,"votos_se_verde":675,"ratio_arrastre":1.029},{"municipio":"SOGAMOSO","puesto_codigo":"0700277010002","puesto":"COL REYES PATRIA","votos_ca_verde":553,"votos_se_verde":560,"ratio_arrastre":1.0127},{"municipio":"SOGAMOSO","puesto_codigo":"0700277980001","puesto":"CÁRCEL DEL CIRCUITO","votos_ca_verde":3,"votos_se_verde":3,"ratio_arrastre":1.0},{"municipio":"SOGAMOSO","puesto_codigo":"0700277020004","puesto":"IE INSEANDES","votos_ca_verde":642,"votos_se_verde":642,"ratio_arrastre":1.0},{"municipio":"SOGAMOSO","puesto_codigo":"0700277900001","puesto":"COLEGIO CELCO","votos_ca_verde":485,"votos_se_verde":479,"ratio_arrastre":0.9876},{"municipio":"SOGAMOSO","puesto_codigo":"0700277990001","puesto":"MORCA","votos_ca_verde":51,"votos_se_verde":49,"ratio_arrastre":0.9608},{"municipio":"SOGAMOSO","puesto_codigo":"0700277020007","puesto":"IE SILVESTRE ARENAS","votos_ca_verde":165,"votos_se_verde":156,"ratio_arrastre":0.9455},{"municipio":"SOGAMOSO","puesto_codigo":"0700277010001","puesto":"IE INTEGRADO JOAQUIN GONZALEZ CAM","votos_ca_verde":896,"votos_se_verde":835,"ratio_arrastre":0.9319},{"municipio":"SOGAMOSO","puesto_codigo":"0700277010003","puesto":"UNIVERSIDAD DE BOYACA SEDE SOGAMOSO","votos_ca_verde":728,"votos_se_verde":623,"ratio_arrastre":0.8558}]},"DUITAMA":{"top_candidatos_ca":[{"municipio":"DUITAMA","candidato":"HECTOR DAVID CHAPARRO CHAPARRO","codpar":"2","partido":"PARTIDO CONSERVADOR COLOMBIANO","votos":4559,"color":"#E07B00"},{"municipio":"DUITAMA","candidato":"JAIME RAUL SALAMANCA TORRES","codpar":"5","partido":"ALIANZA VERDE","votos":2198,"color":"#007C34"},{"municipio":"DUITAMA","candidato":"HERNEL DAVID ORTEGA GOMEZ","codpar":"121","partido":"PARTIDO 121","votos":1558,"color":"#64748B"},{"municipio":"DUITAMA","candidato":"RAMIRO BARRAGAN ADAME","codpar":"5","partido":"ALIANZA VERDE","votos":1518,"color":"#007C34"},{"municipio":"DUITAMA","candidato":"YAMIT NOE HURTADO NEIRA","codpar":"5","partido":"ALIANZA VERDE","votos":1316,"color":"#007C34"},{"municipio":"DUITAMA","candidato":"INGRID MARLEN SOGAMOSO ALFONSO","codpar":"121","partido":"PARTIDO 121","votos":1148,"color":"#64748B"},{"municipio":"DUITAMA","candidato":"NANCY YANETH ZAPATA PACHON","codpar":"120","partido":"PARTIDO 120","votos":1136,"color":"#64748B"},{"municipio":"DUITAMA","candidato":"JICLY ESGARDO MUTIS ISAZA","codpar":"10","partido":"CENTRO DEMOCRÁTICO","votos":1064,"color":"#1E477D"},{"municipio":"DUITAMA","candidato":"EDUAR ALEXIS TRIANA RINCON","codpar":"10","partido":"CENTRO DEMOCRÁTICO","votos":924,"color":"#1E477D"},{"municipio":"DUITAMA","candidato":"JOSE DARIO MAHECHA CASTILLO","codpar":"121","partido":"PARTIDO 121","votos":920,"color":"#64748B"}],"lider_senado":{"municipio":"DUITAMA","codpar":"92","partido":"PACTO HISTÓRICO","votos":15423,"color":"#7B2D8B"},"arrastre_verde":[{"municipio":"DUITAMA","puesto_codigo":"0700079010005","puesto":"COL SANTO T DE AQUINO SD PRIA 2","votos_ca_verde":227,"votos_se_verde":344,"ratio_arrastre":1.5154},{"municipio":"DUITAMA","puesto_codigo":"0700079010004","puesto":"COL JESUS EUCARISTIA","votos_ca_verde":243,"votos_se_verde":364,"ratio_arrastre":1.4979},{"municipio":"DUITAMA","puesto_codigo":"0700079990010","puesto":"SURBA Y BONZA","votos_ca_verde":220,"votos_se_verde":319,"ratio_arrastre":1.45},{"municipio":"DUITAMA","puesto_codigo":"0700079020002","puesto":"COL GUILLERMO LEON VALENCIA","votos_ca_verde":838,"votos_se_verde":1200,"ratio_arrastre":1.432},{"municipio":"DUITAMA","puesto_codigo":"0700079990040","puesto":"EL CARMEN","votos_ca_verde":5,"votos_se_verde":7,"ratio_arrastre":1.4},{"municipio":"DUITAMA","puesto_codigo":"0700079020003","puesto":"U.P.T.C.","votos_ca_verde":610,"votos_se_verde":834,"ratio_arrastre":1.3672},{"municipio":"DUITAMA","puesto_codigo":"0700079010006","puesto":"COL LA NUEVA FAMILIA","votos_ca_verde":366,"votos_se_verde":495,"ratio_arrastre":1.3525},{"municipio":"DUITAMA","puesto_codigo":"0700079010001","puesto":"COLEGIO SALESIANO","votos_ca_verde":364,"votos_se_verde":472,"ratio_arrastre":1.2967},{"municipio":"DUITAMA","puesto_codigo":"0700079020006","puesto":"PARQUE LA ESPERANZA","votos_ca_verde":323,"votos_se_verde":415,"ratio_arrastre":1.2848},{"municipio":"DUITAMA","puesto_codigo":"0700079990050","puesto":"AVENDAÑOS","votos_ca_verde":15,"votos_se_verde":19,"ratio_arrastre":1.2667},{"municipio":"DUITAMA","puesto_codigo":"0700079900001","puesto":"COLEGIO SEMINARIO","votos_ca_verde":439,"votos_se_verde":554,"ratio_arrastre":1.262},{"municipio":"DUITAMA","puesto_codigo":"0700079020005","puesto":"COLEGIO SIMON BOLIVAR","votos_ca_verde":435,"votos_se_verde":543,"ratio_arrastre":1.2483},{"municipio":"DUITAMA","puesto_codigo":"0700079990070","puesto":"SALON COMUNAL TOCOGUA","votos_ca_verde":62,"votos_se_verde":77,"ratio_arrastre":1.2419},{"municipio":"DUITAMA","puesto_codigo":"0700079010002","puesto":"ANTIGUO TERMINAL DE TRANSPORTE","votos_ca_verde":439,"votos_se_verde":539,"ratio_arrastre":1.2278},{"municipio":"DUITAMA","puesto_codigo":"0700079020001","puesto":"COLEGIO BOYACA","votos_ca_verde":760,"votos_se_verde":924,"ratio_arrastre":1.2158},{"municipio":"DUITAMA","puesto_codigo":"0700079010003","puesto":"COL SANTO T DE AQUINO SD PRIA 1","votos_ca_verde":310,"votos_se_verde":371,"ratio_arrastre":1.1968},{"municipio":"DUITAMA","puesto_codigo":"0700079990005","puesto":"SIRATA","votos_ca_verde":39,"votos_se_verde":45,"ratio_arrastre":1.1538},{"municipio":"DUITAMA","puesto_codigo":"0700079020004","puesto":"COL.FRANCISCO DE PAULA SANTAN","votos_ca_verde":369,"votos_se_verde":416,"ratio_arrastre":1.1274},{"municipio":"DUITAMA","puesto_codigo":"0700079990007","puesto":"SAN ANTONIO NORTE","votos_ca_verde":220,"votos_se_verde":221,"ratio_arrastre":1.0045},{"municipio":"DUITAMA","puesto_codigo":"0700079990020","puesto":"QUEBRADA DE BECERRA","votos_ca_verde":52,"votos_se_verde":51,"ratio_arrastre":0.9808},{"municipio":"DUITAMA","puesto_codigo":"0700079020007","puesto":"COLEGIO JAIRO ANIBAL NIÑO","votos_ca_verde":165,"votos_se_verde":159,"ratio_arrastre":0.9636},{"municipio":"DUITAMA","puesto_codigo":"0700079980001","puesto":"CARCEL","votos_ca_verde":6,"votos_se_verde":2,"ratio_arrastre":0.3333}]}}}/*__DATA_END__*/;
+const formato = new Intl.NumberFormat('es-CO');
+const select = document.getElementById('municipio');
+
+function escapar(texto) {
+  return String(texto ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+}
+
+function renderComparativo() {
+  const datos = DATA.comparativo || [];
+  const maximo = Math.max(...datos.map(d => Number(d.votos_ca || 0)), 1);
+  document.getElementById('comparativo').innerHTML = datos.map(d => `
+    <div class="barra-item">
+      <div class="barra-cabecera"><strong>${escapar(d.municipio)}</strong><span>${formato.format(d.votos_ca)}</span></div>
+      <div class="pista"><div class="relleno" style="width:${100 * d.votos_ca / maximo}%"></div></div>
+    </div>`).join('');
+}
+
+function renderMunicipio() {
+  const municipio = select.value;
+  const bloque = DATA.por_municipio[municipio] || {};
+  document.getElementById('liderMunicipio').textContent = municipio;
+  document.getElementById('candidatosMunicipio').textContent = municipio;
+
+  const lider = bloque.lider_senado;
+  document.getElementById('lider').innerHTML = lider ? `
+    <div class="lider-punto" style="background:${lider.color}"></div>
+    <div class="lider-partido">${escapar(lider.partido)}</div>
+    <div class="lider-votos">${formato.format(lider.votos)}</div>
+    <div class="muted">votos de Senado</div>` : '<div class="muted">Sin datos</div>';
+
+  const candidatos = bloque.top_candidatos_ca || [];
+  const maximo = Math.max(...candidatos.map(d => Number(d.votos || 0)), 1);
+  document.getElementById('candidatos').innerHTML = candidatos.map(d => `
+    <div class="candidato-linea" title="${escapar(d.partido)}">
+      <div class="candidato-nombre">${escapar(d.candidato)}</div>
+      <div class="mini-pista"><div class="mini-relleno" style="width:${100*d.votos/maximo}%;background:${d.color}"></div></div>
+      <div class="valor">${formato.format(d.votos)}</div>
+    </div>`).join('') || '<div class="muted">Sin datos</div>';
+
+  renderArrastre(bloque.arrastre_verde || []);
+}
+
+function renderArrastre(datos) {
+  const svg = document.getElementById('graficoArrastre');
+  const ancho = 1000, alto = 360, izq = 72, der = 28, sup = 25, inf = 62;
+  const ratios = datos.map(d => Number(d.ratio_arrastre)).filter(Number.isFinite);
+  const maxY = Math.max(1.25, ...ratios, 1) * 1.10;
+  const areaW = ancho - izq - der, areaH = alto - sup - inf;
+  const x = i => izq + (datos.length <= 1 ? areaW/2 : i * areaW/(datos.length-1));
+  const y = v => sup + areaH - (Number(v || 0)/maxY)*areaH;
+  const puntos = datos.map((d,i) => `${x(i)},${y(d.ratio_arrastre)}`).join(' ');
+  const lineaUno = y(1);
+  const lineasY = [0, .5, 1, 1.5, 2].filter(v => v <= maxY + .01);
+
+  svg.innerHTML = `
+    ${lineasY.map(v => `<line x1="${izq}" y1="${y(v)}" x2="${ancho-der}" y2="${y(v)}" stroke="var(--borde)" stroke-width="1"/><text x="${izq-12}" y="${y(v)+4}" text-anchor="end" fill="var(--muted)" font-size="13">${v.toFixed(1)}</text>`).join('')}
+    <line x1="${izq}" y1="${lineaUno}" x2="${ancho-der}" y2="${lineaUno}" stroke="#E07B00" stroke-width="2" stroke-dasharray="8 6"/>
+    ${datos.length ? `<polyline points="${puntos}" fill="none" stroke="#007C34" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>` : ''}
+    ${datos.map((d,i) => `<circle cx="${x(i)}" cy="${y(d.ratio_arrastre)}" r="5" fill="#007C34"><title>${escapar(d.puesto)} · ratio ${d.ratio_arrastre}</title></circle>`).join('')}
+    <text x="${ancho/2}" y="${alto-12}" text-anchor="middle" fill="var(--muted)" font-size="14">Puestos electorales (ordenados por ratio)</text>
+    <text transform="translate(18 ${alto/2}) rotate(-90)" text-anchor="middle" fill="var(--muted)" font-size="14">Ratio SE / CA</text>`;
+
+  document.getElementById('tablaArrastre').innerHTML = datos.map(d => `
+    <tr><td>${escapar(d.puesto)}</td><td>${formato.format(d.votos_ca_verde)}</td><td>${formato.format(d.votos_se_verde)}</td><td>${Number(d.ratio_arrastre).toFixed(3)}</td></tr>`).join('');
+}
+
+function exportarCSV() {
+  const municipio = select.value;
+  const filas = DATA.por_municipio[municipio]?.arrastre_verde || [];
+  const encabezado = ['municipio','puesto_codigo','puesto','votos_ca_verde','votos_se_verde','ratio_arrastre'];
+  const csv = [encabezado.join(','), ...filas.map(f => encabezado.map(k => `"${String(k==='municipio'?municipio:f[k]??'').replaceAll('"','""')}"`).join(','))].join('\n');
+  const blob = new Blob(['\ufeff'+csv], {type:'text/csv;charset=utf-8'});
+  const enlace = document.createElement('a');
+  enlace.href = URL.createObjectURL(blob);
+  enlace.download = `arrastre_verde_${municipio.toLowerCase()}.csv`;
+  enlace.click();
+  URL.revokeObjectURL(enlace.href);
+}
+
+(DATA.meta?.municipios || Object.keys(DATA.por_municipio || {})).forEach(m => {
+  const option = document.createElement('option');
+  option.value = m; option.textContent = m; select.appendChild(option);
+});
+select.addEventListener('change', renderMunicipio);
+document.getElementById('tema').addEventListener('click', () => {
+  document.documentElement.dataset.theme = document.documentElement.dataset.theme === 'dark' ? '' : 'dark';
+});
+document.getElementById('exportar').addEventListener('click', exportarCSV);
+renderComparativo();
+renderMunicipio();
+</script>
+</body>
+</html>
