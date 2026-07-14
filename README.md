@@ -3,7 +3,7 @@
 ## Candidato
 
 **Nombre:** Juan Carlos Briceño Clavijo  
-**Correo:** REEMPLAZAR_CON_SU_CORREO  
+Correo: jcbricenoc@udistrital.edu.co
 **Repositorio:** https://github.com/juancarlosbricenoclavijo-tech/briceno_prueba_utl_2026
 
 Proyecto desarrollado para construir un pipeline reproducible de resultados electorales de Cámara y Senado en Tunja, Paipa, Sogamoso y Duitama. Incluye extracción desde la API pública de la Registraduría, normalización, almacenamiento en SQLite, consultas SQL analíticas, dashboard HTML autocontenido y visualizaciones en Python.
